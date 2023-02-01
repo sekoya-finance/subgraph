@@ -1,0 +1,7 @@
+type CreateDCA @entity(immutable: true) {
+  id: Bytes!
+  newVault: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
