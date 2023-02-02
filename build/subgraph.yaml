@@ -6,8 +6,9 @@ dataSources:
     name: Factory
     network: matic
     source:
-      address: "0x81C73A274B05138E9046f1097BFfE05d94F7181B"
       abi: Factory
+      address: "0xE832e7b348215A87507b1EaF0ea4c2EFb29dDe00"
+      startBlock: 38838280
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
