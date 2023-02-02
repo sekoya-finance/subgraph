@@ -25,7 +25,6 @@ export function createVault(event: CreateDCA): Vault {
   vault.nextExecutableTimestamp = BigInt.fromU32(0);
   vault.epochDuration = dcaData.value2;
   vault.creationTimestamp = event.block.timestamp;
-  vault.executedOrders = [];
   vault.totalSell = BigInt.fromU32(0);
   vault.totalBuy = BigInt.fromU32(0);
   vault.active = true;

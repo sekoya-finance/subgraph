@@ -18,6 +18,10 @@ dataSources:
       abis:
         - name: Factory
           file: ./abis/Factory.json
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: ERC20
+          file: ./abis/ERC20.json
       eventHandlers:
         - event: CreateDCA(address)
           handler: handleCreateDCA
