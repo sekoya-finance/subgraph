@@ -1,0 +1,182 @@
+[
+  {
+    "inputs": [],
+    "name": "OracleError",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OwnerOnly",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TooClose",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WorkerError",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "received",
+        "type": "uint256"
+      }
+    ],
+    "name": "ExecuteDCA",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "TurnOff",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Withdraw",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "buyToken",
+    "outputs": [
+      {
+        "internalType": "contract ERC20",
+        "name": "_buyToken",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "dcaData",
+    "outputs": [
+      {
+        "internalType": "contract IAggregatorInterface",
+        "name": "_sellTokenPriceFeed",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IAggregatorInterface",
+        "name": "_buyTokenPriceFeed",
+        "type": "address"
+      },
+      {
+        "internalType": "uint64",
+        "name": "_epochDuration",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_sellAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_sellTokenDecimalsFactor",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_buyTokenDecimalsFactor",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "worker",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "job",
+        "type": "bytes"
+      }
+    ],
+    "name": "executeDCA",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastBuy",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "sellToken",
+    "outputs": [
+      {
+        "internalType": "contract ERC20",
+        "name": "_sellToken",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "turnOff",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

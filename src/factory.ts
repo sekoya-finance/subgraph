@@ -1,15 +1,19 @@
-import { CreateDCA as CreateDCAEvent } from "../generated/Factory/Factory"
-import { CreateDCA } from "../generated/schema"
+import { CreateDCA } from '../generated/Factory/Factory';
+import { Factory } from '../generated/schema';
+import { createVault } from './vault';
 
-export function handleCreateDCA(event: CreateDCAEvent): void {
-  let entity = new CreateDCA(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
-  entity.newVault = event.params.newVault
+const FACTORY = '';
 
-  entity.blockNumber = event.block.number
-  entity.blockTimestamp = event.block.timestamp
-  entity.transactionHash = event.transaction.hash
+export function getOrCreateFactory(): Factory {
+  let factory = Factory.load(FACTORY);
 
-  entity.save()
+  if (factory === null) {
+    factory = new Factory(FACTORY);
+    factory.save();
+  }
+  return factory;
+}
+
+export function handleCreateDCA(event: CreateDCA): void {
+  createVault(event);
 }

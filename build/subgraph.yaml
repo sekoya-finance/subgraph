@@ -1,12 +1,12 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Factory
     network: matic
     source:
-      address: '0x81C73A274B05138E9046f1097BFfE05d94F7181B'
+      address: "0x81C73A274B05138E9046f1097BFfE05d94F7181B"
       abi: Factory
     mapping:
       kind: ethereum/events
@@ -16,12 +16,11 @@ dataSources:
         - Factory
       abis:
         - name: Factory
-          file: ./abis/Factory.json
+          file: Factory/abis/Factory.json
       eventHandlers:
         - event: CreateDCA(address)
           handler: handleCreateDCA
-      file: ./src/factory.ts
-
+      file: Factory/Factory.wasm
 templates:
   - kind: ethereum
     name: Vault
@@ -37,10 +36,10 @@ templates:
         - ExecutedOrder
       abis:
         - name: Vault
-          file: ./abis/Vault.json
+          file: Vault/abis/Vault.json
       eventHandlers:
         - event: ExecuteDCA(uint256)
           handler: handleExecuteDCA
         - event: TurnOff()
           handler: handleTurnOff
-      file: ./src/vault.ts
+      file: templates/Vault/Vault.wasm

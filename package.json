@@ -1,6 +1,6 @@
 {
-  "name": "QmNS9TvRsC3J3y7tJgELnuLHF95Nq9pgpBuYDMgSSvNBwF",
-  "license": "UNLICENSED",
+  "name": "sekoya-subgraph",
+  "license": "AGPL-3.0",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
