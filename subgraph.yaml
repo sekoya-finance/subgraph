@@ -8,7 +8,7 @@ dataSources:
     source:
       abi: Factory
       address: "0xE832e7b348215A87507b1EaF0ea4c2EFb29dDe00"
-      startBlock: 38838280
+      startBlock: 38838500
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -26,6 +26,31 @@ dataSources:
         - event: CreateDCA(address)
           handler: handleCreateDCA
       file: ./src/factory.ts
+  - kind: ethereum
+    name: BentoBox
+    network: matic
+    source:
+      abi: BentoBox
+      address: "0x0319000133d3AdA02600f0875d2cf03D442C3367"
+      startBlock: 38838500
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: BentoBox
+          file: ./abis/BentoBox.json
+      eventHandlers:
+        - event: LogTransfer(indexed address,indexed address,indexed address,uint256)
+          handler: handleLogTransfer
+        - event: LogDeposit(indexed address,indexed address,indexed
+            address,uint256,uint256)
+          handler: handleLogDeposit
+      file: ./src/bentoBox.ts
 templates:
   - kind: ethereum
     name: Vault
@@ -45,6 +70,8 @@ templates:
       eventHandlers:
         - event: ExecuteDCA(uint256)
           handler: handleExecuteDCA
-        - event: TurnOff()
-          handler: handleTurnOff
+        - event: Cancel()
+          handler: handleCancel
+        - event: Withdraw(address,uint256)
+          handler: handleWithdraw
       file: ./src/vault.ts

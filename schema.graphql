@@ -7,10 +7,12 @@ type Vault @entity {
   id: ID!
   factory: Factory!
   owner: Bytes!
-  buyToken: Token!
-  buyTokenPriceFeed: Bytes!
   sellToken: Token!
   sellTokenPriceFeed: Bytes!
+  sellTokenBalance: BigInt!
+  buyToken: Token!
+  buyTokenPriceFeed: Bytes!
+  buyTokenBalance: BigInt!
   amount: BigInt!
   nextExecutableTimestamp: BigInt!
   epochDuration: BigInt!

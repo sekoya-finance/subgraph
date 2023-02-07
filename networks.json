@@ -2,7 +2,11 @@
   "matic": {
     "Factory": {
       "address": "0xE832e7b348215A87507b1EaF0ea4c2EFb29dDe00",
-      "startBlock": 38838280
+      "startBlock": 38838500
+    },
+    "BentoBox": {
+      "address": "0x0319000133d3AdA02600f0875d2cf03D442C3367",
+      "startBlock": 38838500
     }
   }
 }
